@@ -38,7 +38,7 @@ export function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-sm text-slate-400 transition-colors hover:text-white"
+                      className="text-sm text-stone-400 transition-colors hover:text-white"
                     >
                       {l.label}
                     </a>
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6">
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-stone-500">
             © 2026 StudyAbroad. All rights reserved.
           </p>
         </div>

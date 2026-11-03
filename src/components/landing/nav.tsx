@@ -30,7 +30,7 @@ export function Nav() {
             <a
               key={l.label}
               href={l.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              className="text-sm font-medium text-stone-300 transition-colors hover:text-white"
             >
               {l.label}
             </a>
@@ -44,7 +44,7 @@ export function Nav() {
         </div>
 
         <button
-          className="rounded-lg p-2 text-slate-200 hover:bg-white/10 md:hidden"
+          className="rounded-lg p-2 text-stone-200 hover:bg-white/10 md:hidden"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
@@ -59,7 +59,7 @@ export function Nav() {
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-3 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white"
+              className="block rounded-lg px-3 py-3 text-sm font-medium text-stone-300 hover:bg-white/5 hover:text-white"
             >
               {l.label}
             </a>

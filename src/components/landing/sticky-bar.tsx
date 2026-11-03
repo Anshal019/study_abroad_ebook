@@ -22,7 +22,7 @@ export function StickyBar() {
   return (
     <div
       className={`fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-navy transition-transform duration-300 md:hidden ${
-        show ? 'translate-y-0' : 'translate-y-full'
+        show ? 'transtone-y-0' : 'transtone-y-full'
       }`}
       aria-hidden={!show}
     >
@@ -32,7 +32,7 @@ export function StickyBar() {
       >
         <p className="text-sm font-bold text-white">
           Rs 251
-          <span className="ml-2 font-medium text-slate-400">| one-time</span>
+          <span className="ml-2 font-medium text-stone-400">| one-time</span>
         </p>
         <button
           onClick={buy}

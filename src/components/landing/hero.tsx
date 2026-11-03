@@ -35,7 +35,7 @@ export function Hero() {
               Plan your study abroad 2027
               <br className="hidden lg:block" /> with real, updated numbers
             </h1>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-300 md:text-lg">
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-stone-300 md:text-lg">
               The complete 74-page reference for Indian students — costs, visa
               rules, scholarships and stay-back rights across 15 countries.
             </p>
@@ -59,9 +59,9 @@ export function Hero() {
               {TRUST.map((t) => (
                 <li
                   key={t.label}
-                  className="flex items-center gap-1.5 text-xs font-medium text-slate-400"
+                  className="flex items-center gap-1.5 text-xs font-medium text-stone-400"
                 >
-                  <t.icon className="h-3.5 w-3.5 text-slate-500" aria-hidden />
+                  <t.icon className="h-3.5 w-3.5 text-stone-500" aria-hidden />
                   {t.label}
                 </li>
               ))}
@@ -73,7 +73,7 @@ export function Hero() {
             <div className="relative">
               <div
                 aria-hidden
-                className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/30 blur-[80px]"
+                className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -transtone-x-1/2 -transtone-y-1/2 rounded-full bg-brand/30 blur-[80px]"
               />
               <BookCover />
               {/* drop shadow */}

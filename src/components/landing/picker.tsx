@@ -46,12 +46,12 @@ export function Picker() {
   const results = computeResults([...selected])
 
   return (
-    <section className="bg-slate-50/80 px-4 py-16 sm:px-6 md:py-20 lg:px-8">
-      <div className="mx-auto max-w-4xl rounded-2xl border border-slate-100 bg-white p-6 shadow-xl shadow-slate-900/5 md:p-10">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+    <section className="bg-paper-deep/80 px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+      <div className="mx-auto max-w-4xl rounded-2xl border border-stone-100 bg-white p-6 shadow-xl shadow-stone-900/5 md:p-10">
+        <h2 className="text-2xl font-bold tracking-tight text-stone-900 md:text-3xl">
           Pick the right country
         </h2>
-        <p className="mt-2 text-sm text-slate-500 md:text-base">
+        <p className="mt-2 text-sm text-stone-500 md:text-base">
           Tick what matters to you — see where the book sends you first.
         </p>
 
@@ -65,13 +65,13 @@ export function Picker() {
                 aria-pressed={active}
                 className={`flex items-center gap-3 rounded-lg border px-4 py-3 text-left text-sm font-semibold transition-all ${
                   active
-                    ? 'border-brand bg-teal-50 text-teal-900 shadow-sm'
-                    : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300'
+                    ? 'border-brand bg-brand-50 text-brand-900 shadow-sm'
+                    : 'border-stone-200 bg-stone-50 text-stone-600 hover:border-stone-300'
                 }`}
               >
                 <span
                   className={`flex h-5 w-5 flex-none items-center justify-center rounded-md border transition-colors ${
-                    active ? 'border-brand bg-brand text-white' : 'border-slate-300 bg-white'
+                    active ? 'border-brand bg-brand text-white' : 'border-stone-300 bg-white'
                   }`}
                   aria-hidden
                 >
@@ -85,7 +85,7 @@ export function Picker() {
 
         <div className="mt-6">
           {results.length === 0 ? (
-            <p className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-5 py-6 text-center text-sm text-slate-400">
+            <p className="rounded-xl border border-dashed border-stone-200 bg-stone-50 px-5 py-6 text-center text-sm text-stone-400">
               Tick a filter above to see the top matches.
             </p>
           ) : (
@@ -93,24 +93,24 @@ export function Picker() {
               {results.map((r, i) => (
                 <div
                   key={r.name}
-                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="flex items-center gap-3 rounded-xl border border-stone-200 bg-white p-4 shadow-sm"
                 >
                   <img
                     src={`/flags/${r.code}.svg`}
                     alt={`${r.name} flag`}
                     loading="lazy"
-                    className="h-8 w-11 flex-none self-start rounded border border-slate-200 object-cover"
+                    className="h-8 w-11 flex-none self-start rounded border border-stone-200 object-cover"
                   />
                   <div className="min-w-0">
-                    <p className="text-sm font-bold text-slate-900">
+                    <p className="text-sm font-bold text-stone-900">
                       {r.name}
                       {i === 0 && (
-                        <span className="ml-2 inline-block rounded-full bg-teal-50 px-2 py-0.5 align-middle text-[10px] font-bold text-brand-600">
+                        <span className="ml-2 inline-block rounded-full bg-brand-50 px-2 py-0.5 align-middle text-[10px] font-bold text-brand-600">
                           TOP PICK
                         </span>
                       )}
                     </p>
-                    <p className="mt-0.5 text-xs leading-snug text-slate-500">
+                    <p className="mt-0.5 text-xs leading-snug text-stone-500">
                       {r.fact}
                     </p>
                   </div>

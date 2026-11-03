@@ -14,7 +14,7 @@ import { StickyBar } from '@/components/landing/sticky-bar'
 export default function Home() {
   return (
     <BuyProvider>
-      <div className="flex min-h-screen flex-col overflow-x-clip bg-white">
+      <div className="flex min-h-screen flex-col overflow-x-clip bg-paper">
         <Nav />
         <main className="flex-1">
           <Hero />

@@ -124,24 +124,29 @@
 /* ── StudyAbroad 2027 brand layer ─────────────────────────── */
 
 @theme {
-  /* palette matched to the reference mockup */
-  --color-navy: #0a1d3b;
-  --color-navy-deep: #081431;
-  --color-navy-soft: #12294f;
-  --color-brand: #12aea2;
-  --color-brand-600: #0e8f85;
-  --color-brand-50: #f0fdfa;
-  --color-saffron: #ec941a;
-  --color-saffron-600: #d97d0c;
+  /* palette derived from the book cover art (cream paper, espresso ink,
+     globe gold, terracotta chip) — each shade nudged off the cover value */
+  --color-navy: #2a2015;      /* espresso, from the cover's title ink #342818 */
+  --color-navy-deep: #211910;
+  --color-navy-soft: #3b2e1c;
+  --color-brand: #c1913a;     /* globe gold, deepened for UI */
+  --color-brand-600: #9c7223;
+  --color-brand-900: #6b4e12;
+  --color-brand-50: #faf3df;
+  --color-saffron: #cf5a2d;   /* terracotta "2027" chip, brightened a touch */
+  --color-saffron-600: #a8431f;
+  --color-paper: #f9f3e4;     /* cover paper #f4ecd4, lightened */
+  --color-paper-deep: #f1e9d3;
+  --color-white: #fffdf6;     /* warm white so every card picks up the paper tone */
 }
 
 @layer utilities {
-  /* teal → amber horizontal gradient used on all Buy buttons (blends immediately, like the mockup) */
+  /* gold → terracotta horizontal gradient used on all Buy buttons (cover sunset tones) */
   .bg-cta {
-    background-image: linear-gradient(90deg, #15b3a8 0%, #ffa41c 100%);
+    background-image: linear-gradient(90deg, #bd8a2e 0%, #b04a22 100%);
   }
   .bg-cta-soft {
-    background-image: linear-gradient(90deg, #2cc2b6 0%, #ffb52e 100%);
+    background-image: linear-gradient(90deg, #d3a63f 0%, #c05a2b 100%);
   }
 }
 
@@ -211,7 +216,7 @@
   position: absolute;
   inset: 0;
   transform: translateZ(16px);
-  background: linear-gradient(150deg, #16305c 0%, #0b1b3b 52%, #081430 100%);
+  background: linear-gradient(150deg, #3b2e1c 0%, #2a2015 52%, #1e160c 100%);
   border-radius: 6px 12px 12px 6px;
   overflow: hidden;
   box-shadow:
@@ -226,7 +231,7 @@
   height: 100%;
   transform-origin: left center;
   transform: rotateY(-90deg);
-  background: linear-gradient(180deg, #0a1730 0%, #060f22 100%);
+  background: linear-gradient(180deg, #2e2415 0%, #1e160c 100%);
   border-radius: 4px 0 0 4px;
   backface-visibility: hidden;
 }
@@ -240,10 +245,10 @@
   transform: rotateY(90deg);
   background: repeating-linear-gradient(
     90deg,
-    #f8fafc 0px,
-    #f8fafc 2px,
-    #dde3ec 2px,
-    #dde3ec 3px
+    #faf6ea 0px,
+    #faf6ea 2px,
+    #e3d9c2 2px,
+    #e3d9c2 3px
   );
   border-radius: 0 2px 2px 0;
 }
@@ -252,7 +257,7 @@
   width: 64px;
   height: 64px;
   border-radius: 9999px;
-  background: radial-gradient(circle at 32% 28%, #ffe08a 0%, #ec941a 55%, #b45309 100%);
+  background: radial-gradient(circle at 32% 28%, #f7e2a0 0%, #c9963a 55%, #8a5d13 100%);
   box-shadow:
     0 6px 14px rgba(0, 0, 0, 0.35),
     inset 0 0 0 3px rgba(255, 255, 255, 0.35);
@@ -261,5 +266,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #0b1b3b;
+  color: #2a2015;
 }
