@@ -193,16 +193,17 @@
 .book-scene {
   perspective: 1600px;
 }
+/* aspect ratio matches the real cover art (448 x 633) */
 .book3d {
   position: relative;
   width: 224px;
-  height: 312px;
+  height: 316px;
   transform-style: preserve-3d;
   transform: rotateY(-24deg) rotateX(7deg);
 }
 .book3d-sm {
   width: 168px;
-  height: 234px;
+  height: 237px;
   transform: rotateY(-20deg) rotateX(6deg);
 }
 .book-front {
@@ -226,6 +227,7 @@
   transform: rotateY(-90deg);
   background: linear-gradient(180deg, #0a1730 0%, #060f22 100%);
   border-radius: 4px 0 0 4px;
+  backface-visibility: hidden;
 }
 .book-pages {
   position: absolute;
@@ -243,13 +245,6 @@
     #dde3ec 3px
   );
   border-radius: 0 2px 2px 0;
-}
-.book-band {
-  position: absolute;
-  bottom: 0;
-  inset-inline: 0;
-  height: 56px;
-  background: linear-gradient(90deg, #f59e0b 0%, #ea580c 100%);
 }
 .book-badge {
   position: absolute;
