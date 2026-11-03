@@ -282,7 +282,7 @@ export const AUDIENCES = [
 // ── Pricing ──────────────────────────────────────────────────
 
 export const PRICING_CHECKLIST = [
-  '74-page PDF — instant download after payment',
+  'Full PDF ebook — instant download after payment',
   '15 country chapters, each with a 2027 UPDATES box',
   '12-month month-by-month application checklist',
   'Budget worksheets + total-cost calculator',
@@ -295,7 +295,7 @@ export const PRICING_CHECKLIST = [
 export const FAQS = [
   {
     q: 'Is this a printed book?',
-    a: 'No. It\u2019s a 74-page PDF ebook. You download it instantly after payment and can read it on your phone, laptop or tablet — or print it if you prefer.',
+    a: 'No. It\u2019s a PDF ebook. You download it instantly after payment and can read it on your phone, laptop or tablet — or print it if you prefer.',
   },
   {
     q: 'Which countries are covered?',

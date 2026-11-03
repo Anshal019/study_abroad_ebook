@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "StudyAbroad 2027 — Plan your study abroad with real, updated numbers",
   description:
-    "The complete 74-page reference for Indian students — costs, visa rules, scholarships and stay-back rights across 15 countries. Updated Nov 2026. Instant PDF download, Rs 251.",
+    "The complete reference guide for Indian students — costs, visa rules, scholarships and stay-back rights across 15 countries. Updated Nov 2026. Instant PDF download, Rs 251.",
   keywords: [
     "study abroad",
     "Indian students",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "StudyAbroad 2027 — The Complete Book",
     description:
-      "74 pages · 15 countries · Updated Nov 2026. Plan your study abroad with real, updated numbers.",
+      "15 countries · Updated Nov 2026 · 12-month checklist. Plan your study abroad with real, updated numbers.",
     siteName: "StudyAbroad",
     type: "website",
   },

@@ -1,12 +1,11 @@
 'use client'
 
-import { BookOpen, CalendarCheck, Download, Globe2 } from 'lucide-react'
+import { CalendarCheck, Download, Globe2 } from 'lucide-react'
 import { useBuy } from './buy'
 import { BookCover } from './book-cover'
 import { FLAG_MARQUEE } from '@/lib/book-data'
 
 const TRUST = [
-  { icon: BookOpen, label: '74 pages' },
   { icon: Globe2, label: '15 countries' },
   { icon: CalendarCheck, label: 'Updated Nov 2026' },
   { icon: Download, label: 'Instant PDF download' },
@@ -36,7 +35,7 @@ export function Hero() {
               <br className="hidden lg:block" /> with real, updated numbers
             </h1>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-stone-300 md:text-lg">
-              The complete 74-page reference for Indian students — costs, visa
+              The complete reference for Indian students — costs, visa
               rules, scholarships and stay-back rights across 15 countries.
             </p>
 
