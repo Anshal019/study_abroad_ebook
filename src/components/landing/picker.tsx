@@ -99,18 +99,18 @@ export function Picker() {
                     src={`/flags/${r.code}.svg`}
                     alt={`${r.name} flag`}
                     loading="lazy"
-                    className="h-8 w-11 flex-none rounded border border-slate-200 object-cover"
+                    className="h-8 w-11 flex-none self-start rounded border border-slate-200 object-cover"
                   />
                   <div className="min-w-0">
                     <p className="text-sm font-bold text-slate-900">
                       {r.name}
                       {i === 0 && (
-                        <span className="ml-2 rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-bold text-brand-600">
+                        <span className="ml-2 inline-block rounded-full bg-teal-50 px-2 py-0.5 align-middle text-[10px] font-bold text-brand-600">
                           TOP PICK
                         </span>
                       )}
                     </p>
-                    <p className="mt-0.5 truncate text-xs text-slate-500" title={r.fact}>
+                    <p className="mt-0.5 text-xs leading-snug text-slate-500">
                       {r.fact}
                     </p>
                   </div>

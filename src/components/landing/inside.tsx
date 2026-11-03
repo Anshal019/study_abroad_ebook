@@ -28,7 +28,7 @@ type TabKey = (typeof TABS)[number]['key']
 // ── Floating stats card ──────────────────────────────────────
 function StatsCard() {
   return (
-    <div className="relative z-10 -mt-12 px-4 sm:px-6 lg:px-8">
+    <div className="relative z-10 -mt-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-4xl grid-cols-2 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-xl shadow-slate-900/5 md:grid-cols-4">
         {STATS.map((s, i) => (
           <div
@@ -54,16 +54,24 @@ function StatsCard() {
 function CountryCard({
   code,
   name,
+  align,
   open,
   onToggle,
 }: {
   code: string
   name: string
+  align: 'left' | 'right'
   open: boolean
   onToggle: () => void
 }) {
+  const [hover, setHover] = useState(false)
+  const show = hover || open
   return (
-    <div className="group relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <button
         type="button"
         aria-expanded={open}
@@ -81,11 +89,15 @@ function CountryCard({
         </p>
       </button>
 
-      {/* popover */}
+      {/* popover — below the card, edge-aligned on mobile, centered from sm up */}
       <div
         role="tooltip"
-        className={`pointer-events-none absolute bottom-full left-1/2 z-40 mb-3 w-72 -translate-x-1/2 rounded-xl bg-navy p-4 text-left opacity-0 shadow-2xl transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 ${
-          open ? 'pointer-events-auto opacity-100' : ''
+        className={`absolute top-full z-40 mt-3 w-64 rounded-xl bg-navy p-4 text-left shadow-2xl transition-opacity duration-200 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 ${
+          align === 'left' ? 'left-0 right-auto' : 'left-auto right-0'
+        } ${
+          show
+            ? 'pointer-events-auto opacity-100'
+            : 'pointer-events-none opacity-0'
         }`}
       >
         <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-2.5">
@@ -113,7 +125,9 @@ function CountryCard({
         </ul>
         <div
           aria-hidden
-          className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 rounded-[2px] bg-navy"
+          className={`absolute -top-1.5 h-3 w-3 rotate-45 rounded-[2px] bg-navy sm:left-1/2 sm:-ml-1.5 ${
+            align === 'left' ? 'left-5' : 'right-5'
+          }`}
         />
       </div>
     </div>
@@ -199,11 +213,12 @@ export function WhatsInside() {
                 id="countries"
                 className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4"
               >
-                {COUNTRIES.map((c) => (
+                {COUNTRIES.map((c, idx) => (
                   <CountryCard
                     key={c.code}
                     code={c.code}
                     name={c.name}
+                    align={idx % 2 === 0 ? 'left' : 'right'}
                     open={openCard === c.code}
                     onToggle={() => setOpenCard(openCard === c.code ? null : c.code)}
                   />

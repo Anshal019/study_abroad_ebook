@@ -253,8 +253,6 @@
 }
 .book-badge {
   position: absolute;
-  top: -18px;
-  right: -18px;
   width: 64px;
   height: 64px;
   border-radius: 9999px;

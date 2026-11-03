@@ -28,11 +28,12 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-20 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-10">
           {/* left — copy */}
           <div>
-            <h1 className="max-w-xl text-4xl font-extrabold leading-[1.12] tracking-tight text-white md:text-5xl md:leading-[1.1]">
-              Plan your study abroad 2027 with real, updated numbers
+            <h1 className="max-w-xl text-[32px] font-extrabold leading-[1.16] tracking-tight text-white sm:text-[38px] lg:max-w-none lg:text-[34px] lg:leading-[1.18] xl:text-[40px]">
+              Plan your study abroad 2027
+              <br className="hidden lg:block" /> with real, updated numbers
             </h1>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-slate-300 md:text-lg">
               The complete 74-page reference for Indian students — costs, visa
@@ -85,8 +86,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* flag marquee */}
-      <div className="relative border-t border-white/10 bg-navy-deep">
+      {/* flag marquee — sits above the floating stats card so flags stay visible */}
+      <div className="relative z-20 border-t border-white/10 bg-navy-deep">
         <div className="marquee-mask overflow-hidden py-3.5">
           <div className="animate-marquee flex w-max items-center gap-7 pr-7">
             {[...FLAG_MARQUEE, ...FLAG_MARQUEE].map((c, i) => (
