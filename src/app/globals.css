@@ -124,23 +124,24 @@
 /* ── StudyAbroad 2027 brand layer ─────────────────────────── */
 
 @theme {
-  --color-navy: #0b1b3b;
-  --color-navy-deep: #081430;
+  /* palette matched to the reference mockup */
+  --color-navy: #0a1d3b;
+  --color-navy-deep: #081431;
   --color-navy-soft: #12294f;
-  --color-brand: #14b8a6;
-  --color-brand-600: #0d9488;
+  --color-brand: #12aea2;
+  --color-brand-600: #0e8f85;
   --color-brand-50: #f0fdfa;
-  --color-saffron: #f59e0b;
-  --color-saffron-600: #ea580c;
+  --color-saffron: #ec941a;
+  --color-saffron-600: #d97d0c;
 }
 
 @layer utilities {
-  /* teal → saffron horizontal gradient used on all Buy buttons */
+  /* teal → amber horizontal gradient used on all Buy buttons (blends immediately, like the mockup) */
   .bg-cta {
-    background-image: linear-gradient(90deg, #14b8a6 0%, #14b8a6 45%, #f59e0b 100%);
+    background-image: linear-gradient(90deg, #15b3a8 0%, #ffa41c 100%);
   }
   .bg-cta-soft {
-    background-image: linear-gradient(90deg, #2dd4bf 0%, #fbbf24 100%);
+    background-image: linear-gradient(90deg, #2cc2b6 0%, #ffb52e 100%);
   }
 }
 
@@ -251,7 +252,7 @@
   width: 64px;
   height: 64px;
   border-radius: 9999px;
-  background: radial-gradient(circle at 32% 28%, #fde68a 0%, #f59e0b 55%, #b45309 100%);
+  background: radial-gradient(circle at 32% 28%, #ffe08a 0%, #ec941a 55%, #b45309 100%);
   box-shadow:
     0 6px 14px rgba(0, 0, 0, 0.35),
     inset 0 0 0 3px rgba(255, 255, 255, 0.35);
