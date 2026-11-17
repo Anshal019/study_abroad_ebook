@@ -12,7 +12,7 @@ import { DottedMap } from './dotted-map'
 
 const STATS = [
   { n: '15', label: 'countries' },
-  { n: '12', label: 'months checklist' },
+  { n: '12', label: 'month checklist' },
   { n: '6', label: 'planning chapters' },
 ]
 
@@ -28,13 +28,11 @@ type TabKey = (typeof TABS)[number]['key']
 function StatsCard() {
   return (
     <div className="relative z-10 -mt-8 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-4xl grid-cols-3 overflow-hidden rounded-2xl border border-stone-100 bg-white shadow-xl shadow-stone-900/5">
-        {STATS.map((s, i) => (
+      <div className="mx-auto grid max-w-4xl grid-cols-3 overflow-hidden rounded-2xl border border-stone-100 bg-white shadow-xl shadow-stone-900/5 divide-x divide-stone-100">
+        {STATS.map((s) => (
           <div
             key={s.label}
-            className={`p-5 text-center sm:p-6 border-stone-100 ${
-              i < STATS.length - 1 ? 'border-r' : ''
-            }`}
+            className="p-5 text-center sm:p-6"
           >
             <p className="text-3xl font-extrabold tracking-tight text-stone-900">
               {s.n}

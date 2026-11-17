@@ -6,7 +6,7 @@ import { BookCover } from './book-cover'
 import { useBuy } from './buy'
 
 export function Pricing() {
-  const buy = useBuy()
+  const { handleBuy, isPaid, downloadBook } = useBuy()
 
   return (
     <section className="bg-paper px-4 py-16 sm:px-6 md:py-20 lg:px-8">
@@ -45,12 +45,21 @@ export function Pricing() {
               ))}
             </ul>
 
-            <button
-              onClick={buy}
-              className="bg-cta mt-8 w-full rounded-lg px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-stone-900/15 transition-[filter] hover:brightness-110"
-            >
-              Buy Rs 251
-            </button>
+            {isPaid ? (
+              <button
+                onClick={downloadBook}
+                className="bg-cta mt-8 flex w-full items-center justify-center gap-3 rounded-xl py-4 sm:py-5 px-8 text-lg sm:text-xl font-extrabold text-white shadow-xl shadow-stone-900/20 transition-all hover:brightness-110 hover:scale-[1.01] active:scale-[0.99]"
+              >
+                Download E-Book (PDF)
+              </button>
+            ) : (
+              <button
+                onClick={handleBuy}
+                className="bg-cta mt-8 flex w-full items-center justify-center gap-3 rounded-xl py-4 sm:py-5 px-8 text-lg sm:text-xl font-extrabold text-white shadow-xl shadow-stone-900/20 transition-all hover:brightness-110 hover:scale-[1.01] active:scale-[0.99]"
+              >
+                Buy Rs 251 — Instant Access
+              </button>
+            )}
             <p className="mt-3 flex items-center justify-center gap-1.5 text-xs text-stone-400">
               <Lock className="h-3.5 w-3.5" aria-hidden />
               Secure payment via Razorpay: UPI, cards, net banking

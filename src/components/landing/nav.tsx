@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Download, Menu, X } from 'lucide-react'
 import { useBuy } from './buy'
 
 const LINKS = [
@@ -12,7 +12,7 @@ const LINKS = [
 ]
 
 export function Nav() {
-  const buy = useBuy()
+  const { handleBuy, isPaid, downloadBook } = useBuy()
   const [open, setOpen] = useState(false)
 
   return (
@@ -35,12 +35,22 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <button
-            onClick={buy}
-            className="bg-cta rounded-full px-5 py-2 text-sm font-bold text-white shadow-md shadow-black/20 transition-[filter] hover:brightness-110"
-          >
-            Buy Rs 251
-          </button>
+          {isPaid ? (
+            <button
+              onClick={downloadBook}
+              className="bg-cta flex items-center gap-2 rounded-full px-6 py-2.5 text-base font-extrabold text-white shadow-lg shadow-black/25 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
+            >
+              <Download className="h-4 w-4" />
+              Download E-Book
+            </button>
+          ) : (
+            <button
+              onClick={handleBuy}
+              className="bg-cta rounded-full px-6 py-2.5 text-base font-extrabold text-white shadow-lg shadow-black/25 transition-all hover:brightness-110 hover:scale-105 active:scale-95"
+            >
+              Buy Rs 251
+            </button>
+          )}
         </div>
 
         <button
@@ -64,15 +74,28 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <button
-            onClick={() => {
-              setOpen(false)
-              buy()
-            }}
-            className="bg-cta mt-2 w-full rounded-lg px-5 py-3 text-sm font-bold text-white"
-          >
-            Buy Rs 251
-          </button>
+          {isPaid ? (
+            <button
+              onClick={() => {
+                setOpen(false)
+                downloadBook()
+              }}
+              className="bg-cta mt-3 flex w-full items-center justify-center gap-2 rounded-xl py-3.5 px-6 text-base font-extrabold text-white shadow-lg shadow-black/20"
+            >
+              <Download className="h-4 w-4" />
+              Download E-Book (PDF)
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setOpen(false)
+                handleBuy()
+              }}
+              className="bg-cta mt-3 w-full rounded-xl py-3.5 px-6 text-base font-extrabold text-white shadow-lg shadow-black/20"
+            >
+              Buy Rs 251
+            </button>
+          )}
         </div>
       )}
     </header>

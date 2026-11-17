@@ -1,6 +1,6 @@
 'use client'
 
-import { CalendarCheck, Download, Globe2 } from 'lucide-react'
+import { CalendarCheck, CheckCircle2, Download, Globe2 } from 'lucide-react'
 import { useBuy } from './buy'
 import { BookCover } from './book-cover'
 import { FLAG_MARQUEE } from '@/lib/book-data'
@@ -12,7 +12,7 @@ const TRUST = [
 ]
 
 export function Hero() {
-  const buy = useBuy()
+  const { handleBuy, isPaid, downloadBook } = useBuy()
 
   return (
     <section id="top" className="relative overflow-hidden bg-navy">
@@ -40,18 +40,34 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button
-                onClick={buy}
-                className="bg-cta rounded-lg px-6 py-3 text-sm font-bold text-white shadow-lg shadow-black/25 transition-[filter] hover:brightness-110"
-              >
-                Get the book Rs 251
-              </button>
+              {isPaid ? (
+                <button
+                  onClick={downloadBook}
+                  className="bg-cta flex items-center gap-2.5 rounded-xl px-8 py-4 text-base sm:text-lg font-extrabold text-white shadow-xl shadow-black/30 transition-all hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <Download className="h-5 w-5" />
+                  Download E-Book (PDF)
+                </button>
+              ) : (
+                <button
+                  onClick={handleBuy}
+                  className="bg-cta rounded-xl px-8 py-4 text-base sm:text-lg font-extrabold text-white shadow-xl shadow-black/30 transition-all hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Get the book Rs 251
+                </button>
+              )}
               <a
                 href="#inside"
-                className="rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                className="rounded-xl border border-white/40 px-7 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"
               >
                 See what&apos;s inside
               </a>
+              {isPaid && (
+                <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3.5 py-1.5 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30">
+                  <CheckCircle2 className="h-4 w-4" />
+                  Full Access Unlocked
+                </span>
+              )}
             </div>
 
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">

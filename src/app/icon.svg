@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f42" />
+      <stop offset="100%" stop-color="#071022" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="saffronGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="pageGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    <linearGradient id="pageGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Navy Squircle Background -->
+  <rect width="64" height="64" rx="15" fill="url(#bgGrad)" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="none" stroke="url(#saffronGrad)" stroke-width="1.8" opacity="0.65" />
+
+  <!-- Graduation Cap (Mortarboard) -->
+  <!-- Skullcap base -->
+  <path d="M22 23 C22 28, 42 28, 42 23 L42 21 C42 21, 32 23.5, 22 21 Z" fill="#b45309" />
+  
+  <!-- Diamond Top -->
+  <polygon points="32,10 52,17.5 32,25 12,17.5" fill="url(#saffronGrad)" />
+  
+  <!-- Cap Button & Tassel -->
+  <circle cx="32" cy="17.5" r="1.8" fill="#fef3c7" />
+  <path d="M33 18 Q 48 19 49 26" fill="none" stroke="#fbbf24" stroke-width="1.6" stroke-linecap="round" />
+  <rect x="47.5" y="26" width="3" height="4.5" rx="1" fill="#f59e0b" />
+
+  <!-- Open E-Book -->
+  <!-- Left Page -->
+  <path d="M13 36 C23 33, 30 35, 32 38.5 L32 50 C30 47, 23 45, 13 48 Z" fill="url(#pageGradLeft)" />
+  <!-- Right Page -->
+  <path d="M51 36 C41 33, 34 35, 32 38.5 L32 50 C34 47, 41 45, 51 48 Z" fill="url(#pageGradRight)" />
+  
+  <!-- Page Lines (representing study guides) -->
+  <path d="M18 39.5 C23 38, 27 39, 29 40.5" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" />
+  <path d="M17 43.5 C22 42, 26 43, 29 44.5" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" />
+  <path d="M46 39.5 C41 38, 37 39, 35 40.5" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" />
+  <path d="M47 43.5 C42 42, 38 43, 35 44.5" stroke="#94a3b8" stroke-width="1" stroke-linecap="round" />
+
+  <!-- Book Spine Center Ribbon -->
+  <polygon points="31,38 33,38 33,52.5 32,51.2 31,52.5" fill="url(#saffronGrad)" />
+</svg>

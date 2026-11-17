@@ -5,7 +5,7 @@ import { useBuy } from './buy'
 
 // Mobile-only sticky buy bar — appears after scrolling past the hero.
 export function StickyBar() {
-  const buy = useBuy()
+  const { handleBuy, isPaid, downloadBook } = useBuy()
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -31,16 +31,28 @@ export function StickyBar() {
         style={{ paddingBottom: 'calc(12px + env(safe-area-inset-bottom))' }}
       >
         <p className="text-sm font-bold text-white">
-          Rs 251
-          <span className="ml-2 font-medium text-stone-400">| one-time</span>
+          {isPaid ? 'StudyAbroad 2027' : 'Rs 251'}
+          <span className="ml-2 font-medium text-stone-400">
+            {isPaid ? '| Full Access' : '| Buy now'}
+          </span>
         </p>
-        <button
-          onClick={buy}
-          tabIndex={show ? 0 : -1}
-          className="bg-cta rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-black/25"
-        >
-          Buy now
-        </button>
+        {isPaid ? (
+          <button
+            onClick={downloadBook}
+            tabIndex={show ? 0 : -1}
+            className="bg-cta rounded-xl px-7 py-3 text-base font-extrabold text-white shadow-lg shadow-black/30"
+          >
+            Download PDF
+          </button>
+        ) : (
+          <button
+            onClick={handleBuy}
+            tabIndex={show ? 0 : -1}
+            className="bg-cta rounded-xl px-7 py-3 text-base font-extrabold text-white shadow-lg shadow-black/30"
+          >
+            Buy now Rs 251
+          </button>
+        )}
       </div>
     </div>
   )
